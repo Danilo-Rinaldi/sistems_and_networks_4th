@@ -1,0 +1,12 @@
+Ip adress;
+indirizzo di classe C sono 192.168.0.x
+x (1 --> 254) il 255 è l'indirizzo di broadcast
+il broadcast è un dispositivo che permette di mandare messaggi a tutta la rete 
+quindi manderà messaggi a tutti i dispositivi che vede i quali inzieranno con 192.168.0
+
+
+poi c'è il subnet mask che ci indica per indicare un altro inidirizzo di rete 
+quindi ad esempio 255.255.255.0 mi sta dicendo che posso cambiare solo l'ultimo ottetto perche 
+i primi tre sono destinati alla rete 
+se fosse stato 255.255.0.0
+avrei potuto modificare gli ultimi due

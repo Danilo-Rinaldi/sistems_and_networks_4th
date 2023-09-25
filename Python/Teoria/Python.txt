@@ -1,0 +1,16 @@
+Installando python abbiamo installato un interprete 
+
+ovvero un qualcosa che interpreta il programma scritto da noi eseguendolo senza creare un effettivo eseguibile
+
+c'è un grosso svantaggio di python che è un vantaggio di C 
+che i linguaggi interpretati son più lenti invece il C è molto più performante
+
+
+Poi un vantaggio di python è che è multipiattaforma al contrario di c perché l'eseguibile non viene letto da tutti i SO
+
+python ha una modalità interattiva  dove nel cmd è in grado di interpretare dei nostri comandi
+
+
+C è un linguaggio molto rigido al contrario di python che è molto più libero
+
+infatti per lo stesso problema ci sono x soluzioni diverse ma la libertà è una arma a doppio taglio
