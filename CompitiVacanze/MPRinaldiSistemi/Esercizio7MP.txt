@@ -1,0 +1,26 @@
+import machine
+import utime
+
+LED = 15
+TENS = 3.3
+
+conversion_factor = TENS / (1 << 12)
+result = 0
+voltage = 0.0
+
+machine.gpio.init()
+
+led_pin = machine.Pin(LED, machine.Pin.OUT)
+
+adc = machine.ADC(2)
+
+while True:
+    result = adc.read_u16()
+    voltage = result * conversion_factor
+
+    if voltage < 0.6825:
+        led_pin.value(1)
+    else:
+        led_pin.value(0)
+    
+    utime.sleep_ms(100)  # Aggiunge una pausa di 100 ms

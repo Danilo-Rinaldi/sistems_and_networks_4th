@@ -1,0 +1,34 @@
+import machine
+import utime
+
+NLED = 6  # Numero dei LED
+TENS = 3.3  # Tensione del pin del Raspberry Pi Pico
+LED1 = 10
+LED2 = 11
+LED3 = 12
+LED4 = 13
+LED5 = 14
+LED6 = 15
+
+valoreLed = (TENS - 0.1) / NLED  # Rapporto tra tensione e LED con tensione del LED e di quello dopo
+conversion_factor = TENS / (1 << 12)  # Valore ADC da 1 a
+vLed = [LED1, LED2, LED3, LED4, LED5, LED6]  # Dichiarazione e inizializzazione dei vettori dei LED
+result = 0  # Valore del potenziometro
+voltage = 0.0  # Voltaggio letto dal potenziometro
+ledOn = 0  # Numero dei LED accesi in base al valore del potenziometro
+
+for k in range(NLED):  # Inizializzazione dei LED nel vettore
+    vLed[k] = machine.Pin(vLed[k], machine.Pin.OUT)
+
+adc = machine.ADC(2)  # Inizializza il pin del potenziometro (GP28)
+
+while True:  # Ciclo in loop
+    result = adc.read_u16()  # Legge il valore del potenziometro
+    voltage = result * conversion_factor  # Calcola il voltaggio
+    ledOn = int(voltage / valoreLed)  # Calcola il numero di LED accesi
+
+    for k1 in range(NLED):
+        if k1 < ledOn:
+            vLed[k1].value(1)  # Accende i LED da 0 a 5
+        else:
+            vLed[k1].value(0)  # I LED rimangono spenti

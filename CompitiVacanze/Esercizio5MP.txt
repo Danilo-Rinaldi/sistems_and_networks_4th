@@ -1,0 +1,32 @@
+import machine
+import utime
+
+# Definizione della tensione di alimentazione e frequenza di campionamento
+TS = 3.3
+FR = 100
+
+# Inizializzazione della periferica ADC
+adc = machine.ADC()
+adc.init()
+
+# Definizione del pin per il LED
+LED_PIN = machine.Pin(2, machine.Pin.OUT)
+
+# Calcolo del fattore di conversione
+fattConv = TS / (1 << 12)
+
+while True:
+    # Lettura del valore analogico dalla periferica ADC e conversione
+    dc = adc.read_u16() * fattConv / TS
+
+    # Calcolo dei tempi di accensione (ta) e spegnimento (ts) del LED
+    ta = int(dc / FR * 1000)
+    ts = int((1 - dc) / FR * 1000)
+
+    # Accensione del LED e attesa
+    LED_PIN.value(1)
+    utime.sleep_ms(ta)
+
+    # Spegnimento del LED e attesa
+    LED_PIN.value(0)
+    utime.sleep_ms(ts)

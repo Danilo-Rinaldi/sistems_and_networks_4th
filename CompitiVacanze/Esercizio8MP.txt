@@ -1,0 +1,23 @@
+from machine import Pin, ADC
+import utime
+
+LED_PIN = Pin(15, Pin.OUT)
+ADC_PIN = ADC(Pin(26))
+ADC_RANGE = 4095
+FR = 100  # Frequenza in Hz
+TENS = 3.3  # Tensione di riferimento dell'ADC
+
+while True:
+    adc_value = ADC_PIN.read_u16()
+
+    # Calcola i tempi di accensione e spegnimento del LED in base al valore letto dall'ADC
+    dc = adc_value * (TENS / ADC_RANGE)
+    ta = int(dc / FR * 1000)  # Tempo di accensione in millisecondi
+    ts = int((1 - dc) / FR * 1000)  # Tempo di spegnimento in millisecondi
+
+    LED_PIN.value(1)  # Accendi il LED
+    utime.sleep_ms(ta)  # Attendi il tempo di accensione
+
+    LED_PIN.value(0)  # Spegni il LED
+    utime.sleep_ms(ts)  # Attendi il tempo di spegnimento
+

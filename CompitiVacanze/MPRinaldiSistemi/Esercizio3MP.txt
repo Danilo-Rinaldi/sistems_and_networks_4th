@@ -1,0 +1,65 @@
+import machine
+import utime
+
+# Definizione dei pin per LED e pulsanti
+LED1_PIN = machine.Pin(21, machine.Pin.OUT)  # verde
+LED2_PIN = machine.Pin(27, machine.Pin.OUT)  # giallo
+LED3_PIN = machine.Pin(28, machine.Pin.OUT)  # rosso
+BUT1_PIN = machine.Pin(15, machine.Pin.IN)   # pedoni
+BUT2_PIN = machine.Pin(16, machine.Pin.IN)   # emergenza
+
+k = 0
+man = False
+ped = False
+c = 0
+
+while True:
+    if not BUT1_PIN.value():
+        ped = True
+    if not BUT2_PIN.value():
+        k += 1
+        if k == 1:
+            man = True
+            c = 1
+        if k == 2:
+            man = False
+            k = 0
+            c = 0
+    
+    if man:
+        if c == 1:
+            LED3_PIN.off()
+            LED2_PIN.on()
+            LED1_PIN.off()
+            utime.sleep_ms(500)
+            LED3_PIN.on()
+            LED2_PIN.off()
+            LED1_PIN.off()
+            utime.sleep_ms(500)
+            c += 1
+        if c == 2:
+            LED3_PIN.off()
+            LED2_PIN.on()
+            LED1_PIN.off()
+            utime.sleep_ms(500)
+            LED2_PIN.off()
+            utime.sleep_ms(500)
+    
+    else:
+        if ped:
+            LED3_PIN.off()
+            LED1_PIN.on()
+            utime.sleep_ms(500)
+            LED1_PIN.off()
+            LED2_PIN.on()
+            utime.sleep_ms(500)
+            LED2_PIN.off()
+            LED3_PIN.on()
+            utime.sleep_ms(700)
+            ped = False
+            utime.sleep_ms(300)
+        else:
+            LED3_PIN.off()
+            LED2_PIN.off()
+            LED1_PIN.on()
+

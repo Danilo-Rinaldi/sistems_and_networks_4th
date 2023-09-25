@@ -1,0 +1,16 @@
+import machine
+import utime
+
+# Definizione del pin del LED (simile a PICO_DEFAULT_LED_PIN in C)
+LED_PIN = machine.Pin(16, machine.Pin.OUT)
+
+t = 1000
+d = 0.1
+td = t * (1 - d)
+tu = t * d
+
+while True:
+    LED_PIN.value(1)  # Accensione del LED
+    utime.sleep(td / 1000)  # Attesa in millisecondi (convertita in secondi)
+    LED_PIN.value(0)  # Spegnimento del LED
+    utime.sleep(tu / 1000)  # Attesa in millisecondi (convertita in secondi)
