@@ -1,51 +1,25 @@
-import turtle #example of an importation of a module built-in
+import turtle
 
-#make a program that tells how many perfect squares there are in range 0 to 200
+print("Inserisci il numero di punte per la tua stella:")
+numero_punte = int(input())
 
-print ("tell me the number of side:\n")
-sides = 5#int (input())
+print("Inserisci il colore della stella:")
+colore = input()
 
-print ("tell me the color")
-color = "red" #input()
-
-window = turtle.Screen()#make a window
-victor = turtle.Turtle()#make a window
-
-victor.speed(sides * 100)
-
-victor.color(color)
-
-victor.fillcolor(color)
-
-victor.begin_fill()
+window = turtle.Screen()
+victor = turtle.Turtle()
 
 victor.speed(5)
 
-x = sides
+victor.color(colore)
+victor.fillcolor(colore)
 
-for i in range(0, sides):
-    
-    victor.left(45
-    victor.forward(350+sides)/sides)
-    victor.right(-45 * sides)
-    victor.forward((350 + sides)/sides)
-    
-    
-    x = x - 1
+victor.begin_fill()
 
+for _ in range(numero_punte):
+    victor.forward(200)  # Lunghezza delle punte della stella
+    victor.right(180 - 180 / numero_punte)
 
+victor.end_fill()
 
-
-
-
-
-    
-
-
-
-
-
-
-window.mainloop()#keep it open
-
-
+window.mainloop()
