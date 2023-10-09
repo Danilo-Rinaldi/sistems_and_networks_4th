@@ -1,0 +1,99 @@
+Livello trasporto
+
+comunica con il protocollo end to end 
+e garatisce l'affidabilità quindi si occupa del fatto che il messaggio arrivi senza errori
+
+
+SICUREZZA
+
+vuol dire tre cose in informatica
+
+1. riservatezza:
+	la riservatezza di una comunicazione in rete è il fatto che nessuno possa estrarre la comunicazione
+	
+2. integrità:
+	la comunicazione non può essere alterata da qualcuno o qualcosa
+
+3. autenticità:
+	la comunicazione deve essere ingannevole
+
+
+la pila TCP IP
+
+NON E' SICURA
+
+gli aspetti di sicurezza arriveranno dopo verso gli anni 90
+
+quei controlli anno integrati o sotto il livello applicazione oppure sotto il livello trasporto
+
+
+
+il livello internet 
+la sua funzione è quella si gestire la comunicazione tra una macchina all'altra 
+
+il livello host to network
+
+è quello con i frame e ha il compito di trasmettere i datagrammi sul mezzo di trasmissivo fisico
+
+
+
+PILA TCP-IP
+
+
+APPLICAZIONE
+
+TRASPORTO (processi)(porte)
+
+INTERNET (computer o router)(IP)
+
+HOST TO NETWORK (Schede di rete o NIC (Network Interface Card), Switch)(MackAddress)
+
+
+HARDWARE(Hub)
+
+
+l'hub essendo totalemnte elettrico va nell'hardware
+
+invece lo swithc va sopra perché funziona diversamente ed è più (intelligente)
+
+come un'incrocio gestito sena semafori e un indirizzo con i semafori
+
+le porte sono numeri a 16 bit che indentificano i proessi all'interno di un computer
+
+
+Disegnino:
+
+ci sono tre computer ognuno con il proprio macaddres 
+
+collegati a uno switch 
+
+gli indirizzi ip per lo witch non ci sono perché sono un livello sotto
+
+
+ma lui invece si interessa agli indirizzi mac
+
+e quello che vede lo switch è
+
+
+Porta Switch 		Mac addres
+
+0			MA A
+
+1			MA B
+
+2			//
+
+3			MA C
+
+invece l'hub non ragiona lui ha un segnale da uno e lo duplica mandandolo a tutti
+
+
+tutto quello che si trova sotto l'applicazione è tutto dentro il sistema operativo queindi 
+
+io non lo andrò mai a toccare ma nemmeno se sarò l'informatico migliore del mondo
+
+
+poi sotto l'interfaccia di rete o host to netwok 
+
+si usano solo indirizzi fisici e sopr ci sono gli indirizzi ip
+ 

@@ -1,0 +1,87 @@
+Internet è un mezzo di comunicazione
+con cui stiamo vivendo in simbiosi 
+
+La popolazione ha iniziato a vivere con internet coprattutto con lo smartphone
+
+
+Le reti sono computer collegati tra loro
+computer o host 
+
+i computer quando li disegnamo i una rete si possono chiamare anche Nodi
+
+Metcalf fece una legge che in caso di maglia completa (tutto collegato con tutti) da la formula la formula 
+n = 5 (5 computer)
+v = 10 (valore della rete) 
+
+tabella:
+
+	A	B	C	D	E
+
+A	0	O	O	O	O
+
+	
+B	O	0	O	O	O
+
+
+C	O	O	0	O	O
+
+
+D	O	O	O	0	O
+
+
+E	O	O	O	O	0
+
+
+I pallini vuoti sono i collegamenti possibili
+
+calcoli:
+
+n*n
+
+(n*n)-n
+
+((n*n)-n)/2
+
+
+ma come fanno i messaggi ad partire da me e arrivre dve voglio io?
+
+
+Classificazione Reti per Estensione:
+
+
+PAN: Personal Area Network 
+i collegamenti delle reti bluetooth
+
+LAN: Local Area Network da 10m a 1Km 
+la rete che abbiamo in casa 
+
+MAN: Metropolitan Area Network fino a 10 Km
+Le reti cittadine
+
+WAN: Wide Area Network da 10Km a 10000Km
+Le reti statali o internazionali fino a ipercontinentali
+
+Internet: Mondiale 
+Contiene tutto il Web 
+
+
+
+Forma dellam rete 
+
+o topologia
+
+la più importante è quella a stella 
+
+poi c'è quella a maglia completa 
+
+oppure c'è quella ad anello
+
+altrimenti la Bus 
+
+Infine la Ibrida dove ad una stella ci colleghiamo dei bus
+
+L'albero è un insieme di stelle 
+infatti se noi colleghiamo l'hub ad un altro hub collegato ad altri hub abbiamo collegato molti più computer
+
+ 
+

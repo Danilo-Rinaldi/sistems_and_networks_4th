@@ -1,0 +1,78 @@
+La pila Tcp/Ip è nata nella pratica de facto
+
+La pila Iso/Osi è nata da un punto di vista Teorico
+
+
+più sei in cima alla pila più hai delle applicazioni e protocolli
+
+i livelli del TCP/IP
+
+1. Host-to-network
+
+
+2. internet
+
+
+3. trasporto
+
+
+4. Applicaziones
+
+
+
+ARPANET: 
+
+il padre di internet è nato nel 1969 dove delle università americane si inziarono a collegre per poter comunicare tra di loro
+
+quindi poi sfruttando la tecnologia telefonica arpanet iniziò a espandersi sul globo
+
+questo non è ancora internet
+
+perché intorno al 1950 internet iniziò a essere usato per le email
+
+e durante gli anni 90 quando si iniziò a pensare i siti web nacque la navigazione web
+
+torniamo al 1970
+
+durante quel periodo c'era la guerra fredda e quindi gli stati uniti anciavano in faccia alla gente i soldi per lavorare e fare ricerca
+
+
+tornando alla pila tcp/ip 
+
+	APPLICAZIONE
+
+	messaggi o flussi
+
+	TRASPORTO
+
+	pacchetti del protocollo di trasporto
+
+	INTERNET
+
+	datagrammi IP
+
+	INTERFACCIA DI RETE
+
+	frame specifici della rete
+
+	HARDWARE
+	(che non è un blocco del tcp ip)
+
+
+Livello applicazione:
+
+Un programma in esecuzione o processo
+
+
+Livello trasporto:
+
+ogni livello sfrutta quello sottostante
+
+il filosofo sfrutta il traduttore
+
+il protagonisti del livello trasporto sono i processi
+
+il livello trasporto ha a funzionalità che i messaggi mandati arrivino a destinazione e anche senza errori
+
+
+	

@@ -6,6 +6,8 @@ def main():
     a = input ("give me the first number")
     b = input ("give me the second number")
 
+    #a, b  = 4, 5 multiple asignament
+
     if b > a:
         a, b= b, a
 

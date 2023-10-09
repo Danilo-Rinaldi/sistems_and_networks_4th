@@ -1,0 +1,101 @@
+ Data transfer o trasferimento dati
+
+c'è il simplex 
+comunicazione unidirezionale
+
+Dialogo con un muto
+
+
+A --> B
+
+full duplex 
+comunicazione bidirezionale e simultanea
+
+tutte le counicazione di internet 
+
+p come il dialogo tra due persone maleducate
+
+Half Duplex
+
+comunicazione bidirezionale ma alternati
+
+è come il dialogo tra due persone educate
+
+
+Error control 
+
+Quando si trasmettono dei dati in merito alle reti si utilizzano segnali elettrici radio o luce 
+per i cavi si usa l'elettricità
+
+che sono tutti fenomen fisici
+
+tutte cose che possono essere disturbate
+
+Esempio:
+   disturbo fisico
+A ----------------> B
+
+error correction:
+Chi riceve il messaggio trova l'errore e lo corregge
+
+cosa estemamente difficile
+
+error detection:
+si usa molto di più perché è molto più semplice
+
+ma vedere un errore non vuol dire saperlo risolvere
+
+quindi la maggiorparte delle volte quando si nota un errore me ne frego e faccio la ritrasmissione
+quindi me lo faccio rimandare il che è fatto in automatico
+
+Data order
+ovvero l'ordine con cui ricevo i dati
+
+perché il dato che voglio mandare io prima lo spezzetto e poi lo riassemblo o ordino con il data order al destinatario
+
+
+
+esempio:
+
+io se faccio sul cmd
+
+ping www.google.com
+
+prima trova l'ip di google con il DNS 
+
+poi gli manda dei pacchetti 
+e li cronometra 
+poi quando ritornano prende i dati 
+e ci da delle informazioni
+
+
+
+se faccio traceroute www.google.com
+
+ci dice tutti i router che ha attraversato nel viaggio di un pacchetto
+
+
+ma questa cosa solo con gli ip pubblici
+pubblici: è univoco in tutto internet 
+privati: è univoco solo all'interno della LAN
+
+
+Flow control:
+
+controllo del flusso, se io trasmetto troppe cose in troppo poco tempo è possibile che il mio destinatario non riesca a gestire il flusso ricevuto
+
+
+Routing:
+
+In genere in internet i messaggi seguono ognuno la propria strada
+le tecnologie che stanno alla base di questo si chiama routing 
+ovvero quelle che devono calcolare quale strada devo fare.
+
+
+
+Comandi:
+Ping
+tracert(windows)
+traceroute(linux)
+ipconfig(windows)
+ifconfig(linux)

@@ -1,0 +1,200 @@
+Gli idnirizzi Ip sono quelli che ci permttono di avere ua identificazione nella rete 
+
+sono formati da ottetti o gruppi
+
+192.168.20.147
+
+147 = gruppo/ottetto
+
+può essere utile tradurlo in codice binario
+
+11000000.10101000.00010100.10010010
+11111111.11111111.11111111.00000000
+
+l prticolarità della subnetmask è che è formata da una fila di 1 e poi solo 0 quindi scrivere tutta quella roba è inutile ma possiamomettere /24
+24 è il numero di 1
+
+in particolare questa subnetmask viene chiamata / 24 perché è molto comune
+
+
+la parte i primi tre gruppi si chiamano parte di rete e l'ultimo è la parte di host
+
+Data una subnet mask qualunque ottengo il binario dividendo la parte di rete e la parte di host 
+
+
+indirizzo ip di rete = indirizzo IP con tutti i bit di host a 0
+
+indirizzo ip di broadcast: indirizzo IP con tutti i bit di host a 1 
+
+PERMETTE INVIO DI DATAGRAMMI A TUTTI GLI HOST DI RETE
+
+
+
+avendo una /n equivarrà a un numero N di host  che sarà pri a 2 alla 32 - n   -2
+
+perché 2 alla perché siamo in binario poi 32 perché è il numero di tutti i bit di un indirizzo ip -n perché devo togliere i numeri della parte di rete e poi rimuovo due perché due tipologie non sono occupabili
+
+192.168.0.23
+/20
+
+quindi 20 1 e poi 12 0
+
+11111111.11111111.11110000.00000000
+
+255	255        240	    0
+
+
+
+nhost: 2 alla 32-20  -2 = 2 alla 12 - 2 = 4094
+
+
+Ip della rete è: 192.168.0.23
+in binario: 1100000000.10101000.00000000.00010111
+
+l'ip di rete è prendete l'indirizzo ip in  binario e ,ettete a 0 tutti i bit di host
+
+quindi mettiamo a 0 32 -n bit quindi 32 - 20 12
+
+1100000000.10101000.00000000.00000000
+
+
+l'indirizzo ip di broadcast: ricopio la partr di rete e la parte di host scrivo 1
+
+11000000.10101000.00000000.00000000
+11000000.10101000.00001111.11111111
+
+ricoverno in decimale
+
+192.168.15.255
+
+
+/n == cidr
+
+
+
+nuovo esercizio
+
+192.168.100.48	/21
+
+numero di host 
+ip di rete
+ip di broadcast
+
+
+192.168.100.48
+
+n host = 2 < 32 - 21  - 2 == 2046
+
+11000000.10101000.011000100.00110000
+11111111.11111111.111110000.00000000
+
+ip di rete
+
+11000000.10101000.01100100.00110000
+
+11000000.10101000.01100|100.00110000
+IP di rete		IP di host
+
+11000000.10101000.01100000.00000000 IP di Rete
+
+192.168.96.0 ip di rete
+
+11000000.10101000.01100111.11111111 IP di Broadcast
+
+192.168.103.255 ip di broadcast
+
+
+172.16.0.1 	/18
+10101100.00010000.00000000.00000001
+11111111.11111111.11000000.00000000
+
+ip di rete
+
+10101100.00010000.00000000.00000000
+10101100.00010000.00111111.11111111
+
+
+rifacciamo l'esercizio
+
+
+192.168.200.15
+255.255.255.128
+
+A. numero di host
+
+B. ip di rete
+
+C. ip di broadcast
+
+
+A.
+
+Subnet Mask in binario:
+
+11111111.11111111.11111111.10000000
+
+/25
+
+numero di host = 2 < 32 - 25  + 2    128 - 2 = 126
+
+B.
+
+ip di rete
+
+ip in binario
+
+192.168.200.0|0001111
+
+ip di rete 
+
+192.168.200.0|0000000
+
+C.
+
+ip di host
+
+192.168.200.0|0001111
+
+192.168.200.0|1111111
+
+
+
+A. 126
+
+B. 192.168.200.0
+
+C.192.168.200.127
+
+
+10.43.0.1
+
+A. Subnet Mask
+B. nhost
+C. ip di rete
+D. ip di broadcast
+
+
+10.43.0.1 /12
+
+
+A. 11111111.11110000.0000000.00000000
+
+B. 2 < 32 - 12 - 2 = 1.048.576 - 2 = 1.048.574
+
+C. 
+
+1111 1111.1111 0000.0000 0000.0000 0000
+0000 1010.0010 0000.0000 0000.0000 0000 IP DI RETE binario
+
+10.32.0.0 IP DI RETE
+
+
+D.
+
+1111 1111.1111 0000.0000 0000.0000 0000
+0000 1010.0010 1111.1111 1111.1111 1111
+
+10.47.255.255 IP DI BROADCAST
+
+
+
