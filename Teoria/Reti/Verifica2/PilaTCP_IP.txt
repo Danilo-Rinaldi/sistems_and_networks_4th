@@ -97,3 +97,40 @@ poi sotto l'interfaccia di rete o host to netwok
 
 si usano solo indirizzi fisici e sopr ci sono gli indirizzi ip
  
+
+
+
+APPLICAZIONE: http/https FTP SMTP/IMAP/POP3 SSH (aprire shell a distanza) DNS (tradurre i nomi in ip address) DHCP(Configura tutti i dispositivi di una rete)
+
+TRASPORTO: TCP UDP ICMP
+
+INTERNET: IPV4 IPV6 ARP
+
+HOST TO NETWORK: IEEE802.x(3, 11, 15) (ethernet wifi bluetooth wimax)
+
+
+quando si sviluppa applicazioni io vado a toccare solo la parte applicazione il resto si da per buono è ovvio che se nasce una nuova tecnologia di trasporto si andrà ad adattare l'host to network
+
+
+
+DEMULTIPLAZIONE E MULTIPLAZIONE
+
+sono due czratteristiche molto importanti del tcp ip perché 
+essa permette a più applicazioni simultaneamente di usare la rete
+
+
+esempio
+
+noi siamo connessi a una rete
+
+e sul computer abbia due applicazioni che comunicano con internet 
+
+quanso inviamo i dovuti messaggi nlla rete di entrambi usciranno dall'antenna della shceda wifi 
+
+e questa cosa si chiama multiplazione 
+
+quando devo ricevere segnali e dividerli per la rispettiva app 
+
+si chiama demultiplazione
+
+
