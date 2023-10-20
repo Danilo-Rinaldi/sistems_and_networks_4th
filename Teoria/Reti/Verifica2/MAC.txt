@@ -1,0 +1,24 @@
+L'ethernet è nata nel 1976 dalla xerox ora famoso per le stampanti
+
+a quel tempo lì esisteva già l'IEEE i quali inzieranno a fare protocolli simili a ethernet quindi si unificarono
+
+Nel'ethernet ci sono gli indirizzi MAC a 32bit
+
+che viaggiano a 10 Mbit/s
+
+visto che non esiste un essere superiore abiamo un protocollo CSMA/CD che gestisce l'accesso ala rete in modo equo
+
+Carrier Sense Multiple Acces with Collision Detect
+
+(nel wifi cambia sono l'ultima lettera o parola che si sostituisce con Avoidance)
+
+quando due segnali elettrici sono simultnei COLLIDONO e si sommano crrompendosi 
+
+il CD collision detection serve per trovare le collisioni
+
+quindi quando le schede di rete rilevano un segnale strano o senza senso sanno che è successa una collisione 
+
+
+se un host rilvs che sul filo c'èuna tensione e a quel punto può trasmettere
+
+dopo la prima collissione aspetto un tempo casuale diverso e dopo si riinizia a parlare

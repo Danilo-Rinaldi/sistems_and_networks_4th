@@ -134,3 +134,123 @@ quando devo ricevere segnali e dividerli per la rispettiva app
 si chiama demultiplazione
 
 
+
+interfaccia di rete
+
+
+dentor ci sono tutti i protocolli IEEE 802 
+
+IEEE istituto ingerneri elettrcii e elettronici
+
+802 tutta la famiglia standard che riguarda linterfaxcci di rete
+
+
+le lan che sono quelle che faremo principalemtne noi
+
+per realizzare una LAN servono tutti i protocolli IEEE 802
+
+il cablafggio della rete regolato dalle norme EIA/TIA 568 e ISO/IEC11801
+
+
+entriamo nel dettaglio
+
+prima abbiamo accennato al 802.x
+
+dove x è un numero
+
+cose interessanti:
+
+ci sono dei numeri defunti quindi non più usati 
+
+il .13 viene lasciato vuoto per superstizione
+
+e non tutti sono protocolli ma ad esempio
+
+802.1 ovvero il primo non è un protocollo ma spiega solo come è strutturata una rete
+
+
+
+importanti
+
+802.2 controllo logico dei link (imp)
+
+802.3èl'ethernet  (imp)
+
+802.4/5/6 per le reti bus o anello
+
+802.7 descrive la banda larga 
+
+802.9 è per delle reti LAN in real time ma non ci interessa più di tanto
+
+802.10 rigurda le virtual lan ed èmolto importante (imp)
+
+802.11 protocollo per gestrie il wifi(imp)
+
+802.15 parla delle reti pan e i loro protocoli (bluetooth - zigbee) (imp)
+
+802.16 parla del WI-MAX utilizzato in paesi esteri non in italia (imp)
+
+
+a livello fisico noi abbiamo gli indiirizzi isici anche detti MAC
+
+Medium Access Control
+
+un tempo eszitevano queli a 16 bit ma non esistono più quindi eadesso ci soo quelli a 48 bit = byte
+
+indirizzo MAC io ho i primi 3 byte dati dal costruttoree poi il resto è del dispositivio (ztudia meglio questa parte perché ho scutto poco)
+
+
+questi inditizzi sono unicast ovvero indirizzi fisici che indentificano un signolo dispositivo
+
+poi ci sono i multicast ovvero per indirizzare più dispositivi con un solo indirizzo (non si usa)
+
+indirizzo fisico di broadcast che è FF-FF-FF-FF-FF-FF-FF e permette di rggiungere tutti gli indirizzied è important per e lan
+
+OGNI NIC ha un indirizzo MAC normalemente una scheda riceve dei frame normalemnte prende quelli indirizzati a lei e scarta gli altri
+
+se metto la NIC in modalità promiscua (si fa con wireshark) e a quel punto li accetto tutto e a quel punto posso sniffare
+
+
+ci sono dei modi che si chiamano IP o MAC spoofing che vengono usati per mascherarsi nella rete 
+
+se non fatto con accortezza il pc si isola dalla rete ma se fatto bene a quel punto viene usato dagli acker per mascherarsi nella rete
+
+
+
+
+APP
+
+(SO)
+
+TRASPORTO
+
+INTERNET
+
+HOST TO NETWORK
+LLC
+IEEE802.2
+
+
+(sottolivello)
+MAC (medium acces control)
+
+IEEE 802.X  X >= 3
+
+Gestisce l'hardware
+
+wi fi wi max ecc
+
+è lui che gestisce la parte sotto
+conflitti tra utenti
+è messo direttamente nella scheda di rete
+
+HW
+
+
+il metodo di accesso multiplo è quello che permette una totale democrazia a livello di rete evitando conflitti tra utnti nella rete
+
+
+
+LLC è comune a tutte le reti vocali
+lui si pone come unificatore per il livello che sta sopra che è il livello internet
+è incluso nel IEEE 802.2 e il livello LLC è generalmente via software
