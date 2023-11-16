@@ -1,0 +1,260 @@
+IL WIFI
+
+o protocollo IEEE 802.11
+
+
+è nato per creare delle lan senza fili in particolare se nella lan non ci sono cabvi si chiamerà wlan
+
+Il wifi vuol dire wirless fidelity
+
+l'elemento nuovo che uso si chiama Acces point ovvero un dispositivo che ermette agli host wireless di collegari via rete
+
+
+
+a pagina 35 c'è la speigazione
+
+
+
+i collegamenti di tipo fisico  hanno dei problemi fisici
+
+lo stesso fale per il wifi quindi
+
+
+e quindi può essere disturbato
+
+ad esempio
+
+attenuazione
+
+lapotenza del segnale è circa 1/(d * d)
+
+quindi più mi allontano più il segnale sarà debole 
+
+oppure
+
+se io metto il cellulare a 1 cm e lui produce 1 w di potenza  vengo a sapere che la potenza ch mi arriva è 1 W
+
+se lo tengo a 1 metro invece ottego 10 alla -4 W quindi molto minori rispetto a prima
+
+quindi ci consigliano di usare le cuffiette per telefonare
+
+
+la stessa cosa vale per gli ostacoli come muri
+
+e questi dipende dal materiale dell'ostacolo
+
+ad esempio nel container scolastico il segnale non arriva perché è una gabbia di ...
+
+
+un altro tipo di disturbo ono le interfeenza
+
+perché visto che di segnali radio ne è pieno il mondo 
+
+se mando un segnale sulle stesse frequenze 
+
+
+quano io ho un dispostivo in virtù delle equazioni di maxwel tutte le volte che ho un circuito elettronico che ha una corrent variabile nel tempo qiesto ottiene onde elettromagnetiche
+
+
+oppure le luci che abbiamo nell'aula sono a 50 herz quindi io sono immerso in una corrente da 50 hz e quando le spengo e lo riaccendo faccio un impulso fortissimo chiamato burst
+
+in informatica questo si traduce in errori nelle mie connessioni quindi se programmo una rete io cerco sempre di farla ethernet poi se voglio aggiungere il wifi bello eh però meglio non esagerare
+
+a pagina 38 ho una tabella con i materiali che possoo schermare l'internet
+
+sostanzialmente 
+
+l'aria è quasi nullo 
+
+l'essere vivente è medio 
+
+oppure la carta attenua molto
+
+invece il metallo molto alto
+
+oppre gli alberi attenuano 
+
+gli alberi bagnati motlissimo
+
+
+
+Multipath
+
+ovvero un problema 
+
+visto che un acces point è isotropo quindi lo manda in tutte le direzione
+
+che rimbalzando sui muri quindi il segnale può corrompersi o cancellarsi e quindi ri rallenta
+
+la stessa cosa fuziona cn il gps in una valle molto stretta
+
+
+dcome per l'ethernet il wifi ha diverse versionen caratterizzate con la lettera
+
+la connessione del wifi è molto più lenta
+
+Mbps = megabyte per secondo
+
+
+Il caso di rete wifi più semplice possibile si chiama rete ad-hoc 
+
+ovvero una rete che permette di connettere un dispositivo con un altro dispositivo direttamente e non si usa un acces point
+
+si usa ad esempio per una stampante
+
+ma non si usa qusi mai porpio come non si usa quasi mai connettere due computer via ethernet
+
+Ogni accespoint permette di realizzare un BSS basic service set
+
+ovvero un accespoint con i suoi dispositivi collegati
+
+nelle LAN aziendali come quella dell'itis è composta da una parte cablata e una parte wireless 
+
+nelle reti aziendali si possono creare degli ESS ovvero noi possiamo creare degli accesspoint ovvero Extended service set
+
+che permette di creare una rete omogenea ovvero senza buchi 
+
+però nelle zone in cui gli access point si incontrano si possono disturbare
+
+e come si risolve?
+
+semplicemente si cambia il canale di comunicazione quindi io non faccio comunicare access point con canali uguali 
+
+i canali del wifi possono essere 16 
+
+Service set Identifier che vale sia per i BSS sia per i ESS  e in acronimo SSID e sere per identificare il wifi ovvero il nome può essere lungo 32 caratteri e può non essere univoco
+
+Io visto che non è univoco posso creare un wifi ITIS con la stessa password che ci permette di far connettere utenti alla mia rete e fare uso malevolo di questo collegamento come ad esempio mettere uno sniffer 
+
+Infrastruttura di rete è quella cosa che è a monte degli accesspoint 
+
+quindi se i miei accesspoint è collegato a un router il mio router è la mia infrastruttura  di rete
+
+i BSS arrivano fino a 100 metri senza ostacoli
+
+
+
+nelle reti wifi c'è un problema chiamato del terminale nascosto
+
+In ethernet se io inizio a trasmettere tutti possono rilevare il segnale elettrico
+
+ma sul wifi ha una sua area di compertura 
+
+perché ogni dispositivo trasmette un segnale a una certa frequenza che dpo un po' si attenua totalmente
+
+quindi se io ho un AP accespoint che ha la sua area di copertura 
+
+ma se il mio computer ha una area di compertura
+
+ma se io ho un altro cmputer collegato al AP dal lato opposto il mio computer non vede l'altro
+
+quindi non si vedono e questo è un problema 
+
+perché problema? 
+
+perché il mio computer non saprà mai quando l'altro sta trasmettendo e viceversa 
+
+e quindi cambia tutto il discorso dell'invio dei messaggi fatto nel ethernet 
+
+in grande c'è un meccanismo di prenotazione 
+
+nell'ethernet c'era il collision detection
+
+CSMA/CA
+
+carriere sense multiple access/collision avoidance (wifi  IEEE 802.11)
+
+nell'ethernet ci sono i CMACD
+
+carriere sense multiple access/collision detection (ethernet)
+
+
+per risolvere questo problema ci saranno dei (messaggi o frame) di controllo 
+
+ovvero richiesta di invio Request to send RTS
+
+e il CTS clear to send o liberodi inviare
+
+quando un computer deve trasmettere su una rete wifi prima di inviare invia un messaggio RTS e dentro l'RTS è contenuto anche il temponecessario all'invio dei dati
+
+e viene mandato a broadcast quindi a TUTTI quindi tutti i computer ma soprttutto l'acces point il quale decide chi deve mandare e a chi a scelto manda un emssaggio CTS quindi clear to send 
+
+che mi peremtte almio computer di mandare 
+
+gli altri che ricevono il cts vedono che non sono loor a poter parlare
+
+e questo meccanismo permette di far comunicare un host alla volta
+
+quindi prima RTS poi il CTS poi i dati e poi un ACK
+
+
+Bluetooth IEEE802.15
+
+viene usato per fare delle PAN
+
+la coaa interessante del bluetooth (blu) è che nasce da aziende private
+
+come ad esempio Nokia Intel IBM ...
+
+
+ora Blu è nato come prootocllo per collegare dispositivi mobili ovvero dipsoitivi con bassa potenza di calcolo 
+
+e come protocllo  basso consumo energetico 
+
+quindi molto utile per tutti i dispositivi a batteria 
+
+e dopo il bluetooth è nato il ble oovero bluetooth low energy ovvero bluetooth con consumi ancora minori 
+
+come e cuffiette che hanno una copertura minimale a basso consumo 
+
+Le pan de bluetooth sono ftte così
+
+Si chiama sistema master slave
+
+quindi c'è un dispositivo chiamato master e altri dipsoitivi chiamati slave
+
+quindi ad esempio il master potrebbe essere il cellulare e gli slave sono cuffiette e smartwatch
+
+l'unità base così si chiama piconet
+
+
+il bluetooth è opensource quindi se qualcuno vuole prendere il bluetooth è modificarlo può farlo
+
+oppure l'usb è un protocollo open source
+
+
+Open source si o no ?
+
+se è opensource è più controllabile ma se io ho un qualcosa proprietario posso modificarlo per i miei fini 
+
+quindi se ho il mio chatgpt e odio un personaggio politico posso cancellarlo dal mio porgramma e quindi chiuncque cercherà quel personaggio sul mio gpt non lo troverà e penserà che non esista
+
+una sorta di censura
+
+
+Wi-Max
+
+è una rete wifi molto molto estesa (aree di una città)
+
+con una velocit un po' più bassa
+
+ed è usato in australia stati uniti ecc
+
+quindi applicazioni che operano su distanze possono usare il wimax per funzionare 
+
+Cimpare un cavo ethernet serve per costruirsi un cavo ethernet nel senso che io ho il cavo e i connettroi e attacco il tutto
+
+
+Quindi per il host to network abbiamo FINITO 
+
+quindi "salutiamo tutti i procolli IEE 802.x"
+
+quindi saliamo nella pila tcpIP 
+e andremo al livello internet
+
+
+
+
+
+
+

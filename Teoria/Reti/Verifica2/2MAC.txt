@@ -39,5 +39,6 @@ x = random.random (0, 2 alla k) k = 0, 1, 2, 3, 4, 5, ...
 
 
 
+FRAME ETHERNET
 
  

@@ -1,0 +1,252 @@
+LIVELLO INTERNET
+
+Il livello internet serve a..... e fa.....
+
+
+cosa fa un router?
+
+fa un inoltro e instradamento
+
+e lo diciamo noi come deve fare nella configurazione.
+
+Il procedimento di inoltro dei datagrammi all'interno di una rete che permette a un datagramma di andare da mittente e destinatario si chiama commutazione
+
+La parola commutazione ha una oriine stroica antica ovvero da uando esistevao i teelfoni fissi a inizio 900
+
+I fortunati che avevo un cellulare a casa per chiamare una altra persona dovevo mettere in collegamento con una altra persona
+
+ma questa cosa doveva essere flessibile perché io voglio chiamare altre persone 
+
+quindi io collegavo il mio telefono con un centralino dove un operatore attaccava e staccava cavi per mettermi in collegamento con varie persone 
+
+e si dice che COMMUTAVA 
+
+
+e praticamente il numero di cellulare era il percorso nel vari centralini per collegari con il destinatario 
+
+c'è wow 
+
+
+
+usando cisco 
+
+se devo far comunicare due host io non vado a commutare i cavi
+
+ma io tramite i pacchetti dico dove deve andare e evito di fare tutto il casino di commutare
+
+e quindi è la combinazione tra pacchetti e configurazione dei router mi permette di collegare due host
+
+le routing che so fare ora si chiama statico 
+
+ma il routing si può far anche in modo dinamico quindi si configurano da soli
+
+e soprattutto auello in internet è tutto in modo dinamico quindi sparisce il ruolo dell'operatore 
+
+quindi se un collegamento salta o è pieno io (router) ne tengo conto e inoltro il pacchetto a un altro cavo funzionnte
+
+
+quindi esiste la commutazione di pacchetto e quella di circuito (oramai morta)
+
+
+
+ci sono 10 regole IMPORTANTISSIME per chi progetta cose importanti
+
+e sono scritte nelle RFC request of comments e numero(1958)
+
+
+Regole:
+
+
+1 DEVE FUNZIONARE
+
+io devo testare moltissimo perché così non si impazzesce
+
+e poi è meglio che funzioni alla larga rispetto al non funzioni 1 dettaglio che mi blocca da completare tutto
+
+
+2 KEEP IT SIMPLE 
+
+pensare a soluzioni semplici e dare priorità a soluzioni semplici 
+
+quindi prima di scrivere devo RAGIONAREEEE prendo un foglio e penso a come fare o faccio un uml (java)
+
+
+3 SCELTE CHIARE
+
+se ci sono diversi modi di fare una cosa io ne scelgo uno e lo porto avanti per tutto l'esercizio
+
+se sono in un gruppo si decide assieme 
+
+perché se cambio una sceltaa metà strada rovino tutto 
+
+quindi se ho scelto e ho sbagliato faccio prima a riscrivere tutto
+
+
+4 SFRUTTA LA MODULARITA
+
+invece di scrivere un main grande come una casa 
+
+scrivo delle funzioni per rendere ordinato un esercizio
+
+le funzioni di un codice modlare sono RIUTILIZZABILI
+
+e quindi le posso rendere MANUTELABILE (sottoponibile a manutezioni)
+
+
+i singoli moduli classi ecc devono essere il più possibile indipendente tra di loro 
+
+perché se io modifico una parte in un main 
+
+il codice più modilare che io possa scrivere è un codice in java con le classi
+
+
+5. aspettati eterogeneità
+
+questo la notiamo soprttutto in internet perché io a internet ho collegato tantissimi dispositivi diversissimi 
+
+infatit il protocollo tcp ip gira su TUTTO
+
+
+6. EVITA PARAMETRI STATICI
+
+o rendere il mio codice il più dinamico possibile
+questa cosa la stiamo vedendo moltissimo in c in tpsit dove da costanti statiche stiamo rendendo tutto dinamico
+
+oppure la velocità delle reti non è un volare costante ma deve essere negoziato dagli host (calcolato da ohst)
+
+
+7. MEGLIO BUONO DI PERFETTO
+
+puntate sempre a scrivere codici buoni non perfetti 
+
+perfetto si intende che calcoli tutti i casi possibili
+
+meglio scrivere un codice che non calcoli tutto ma quelle cose che farà più spessole calcoli bene!
+
+quindi per prima cosa prepariamo qualcosa di robuto e serio
+
+POI si possono fare update per provare a RAGGIUNGERE la perfezione impossibile
+
+
+quindi tradotto
+
+prima scrivo il programma che funzioni poi gestisco i cadsi particolari
+
+
+
+8. RIGIDO O TOLLERANTE
+
+riguarda principalmente i protoclli di rete
+
+quindi ho due progamma che si parlano sulla rete secondo i propri protocolli che ossono essere diversi
+
+quindi 
+IO CHE MANDO devo essere RIGIDO rspetto al mio protocollo
+
+IO CHE RICEVO devo essere TOLLERANTE rispetto al messaggio che mi arriva
+
+questa cosa si apllica anche a codice
+
+
+
+9 SCALABILITA
+
+
+
+un algoritmo scalabile è un algoritmo  che non fa dipendere il suo buon funzionamento al numero di dispositivi
+
+quindi questa cosa sta abùlla base di internet perché in base al numero di dispositivi che collego internet funzionerà semre
+
+
+10. COSTI E PRESTAZIONI
+
+quando si a qualcosa che ha un costo 
+
+anche i codici hanno csoti perché vengono programmati d QUALCUNO
+
+quando c'è un costo devo avere un rapporto prezzo prestazioni molto vantaggioso perché se no fallisco e il mio codice non lo usa nessuno perché se lo faccio pagare 10 euro per un programma che fa 1 + 1 non me lo comrpa nessuno
+
+
+Internet
+
+è la rete di tutte le reti
+
+quindi tutte le sottoreti di internet sono connessi tramite le backbone che permettono il collegamento 
+
+una azienda normale o una persona per collegarsi nn si collega a una dorsale ma alla sottorete della sua ISP
+
+Internet Service Providere
+
+
+Ip internet protocol
+
+quindi i protocolli ip sono quelli che permettono a internet di funzionare
+
+i protocolli IP  hanno il compito di fare arrivare i datagrammi ma non ne ha la garanzia 
+
+quindi non sono affidabili
+
+l'affidabilità è affidata a livello trasporto
+
+
+I messaggi del livello IP sono i datagrammi ip
+
+e sono luinghi al massimo 64 Kb
+
+ma in pratica arrivano massimo a 1.5 Kb
+
+
+ci sono solo due protocolli qui
+
+IPv4 e IPv6
+
+con i relativi documenti RFC 791
+
+e
+
+RFC 4291
+
+attualemnte usiamo tutti e due ma principalmente l'ipv4
+
+
+la versione 5 è stata subito modificata nella 6perché non era abbastanza ottimale
+
+
+IPV4 
+
+non affidabile
+
+e il datagramma è formato così
+
+Header		data 	(massimo 64Kb ma di solito sono 1500 byte)
+
+formato da due parti
+
+nell'header c'è
+
+DA SAPERE A MEMORIA
+
+
+è composto da
+
+
+Versione(4 o 6 in binario)
+
+IHL (Internet header length) (espressa in blocchi da 32 bit) (quindi se io ho 5 righe die header nel IHL scrivo 5)
+
+type of service (serve per distinguere il tipo di utilizzo per cui stiamo usando il datagramma) (non viene molto usato) (6 bit)
+
+vit vuoit per portare la riga a 32 bit
+
+total length (lunghezza totale del frame (header + dati))
+
+seconda riga la faremo successivamente
+
+time to live (è n contatore che viene decrementato) (parte da 64 o 128) 
+(ogni volta che altraversa un router fa un (hop) e ogni volta che fa un hop questo valore viene diminuito di uno) 
+(se questo valore arriva a 0 il datagramma si cancella dalla rete) (nome improprio in ipv6 si chiama hop limit)
+
+
+
+
+

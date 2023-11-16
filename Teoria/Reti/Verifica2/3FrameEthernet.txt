@@ -1,0 +1,103 @@
+FRAME ETHERNET
+
+ha un alunghezza variabie da 64 a 1518 byte
+
+poi questa cosa verrà tradotta in bit quindi 1  e 0 e trasmessa sulla rete
+
+
+inizia con lpreambolo
+ogni preambolo vale 55 in esadecimale ed è un avlore statico per 7 volte
+
+
+poi c'è un SFD startig frame delimeter
+
+
+e in esadecimale c'è un D5 
+
+e qui dice dopo di me c'è qualcosa di sensato
+
+
+poi c'è il mac addres del destinatario e poi quella del mittente 
+
+
+poi c'è una parte della VLAN che non ci interessa adesso 
+
+
+poi ci sono due byte in cui si dice il tipo di frame ed è variabile perché dice che tipo di frame è
+
+
+poi ci sono i dai che vanno da 1500 byte quindi è la parte più importante
+
+quando si parla di dati nelle reti si dice che i dati sono inseriti nel payload quindi nel carico
+
+
+ora 
+
+il payload che è composto da dati e da un Pad deve essere perforza composto da 46 Byte per le regole di ethernet 
+quindi se io ho un dato di un byte non va bene quindi inserisco il PAD in cui inserisco tanti bt a 0 fino a quando non rggiungo la dimensione minima
+
+questo perché non si vuole che la typefield sia attaccato alla check sum
+e infine c'è un campo molto importante che si tratta di checksum
+
+tramite il quale capisco se c'è un padding
+
+ora
+
+lachecksum è messa alla fine del frame 
+
+(nomenclatura) ora la parte anteriore ai dati si chiama HEADER la parte posteriore ai dati si chiama TRAILER 
+
+
+
+tutti i protocolli hanno un header ma pochi hanno il trailer
+
+la checksum è calcolata da un protocollo chiamato crc controllo di ridondanza ciclica
+
+questo algoritmo prende in input header e dati e restituisce 4 byte di checksum
+
+l'unica cosa che PER ADESSO  dobbiamo sapere è che ha una propietàchiamato effetto valanga
+
+per la quale se prima gli mandiamo un input e poi gliene dimo uno simile la checksum è molto diversa sebbene gli input siano dimili
+
+visto che il cpmputer di destinazione separa checksum e dati
+
+e tramite la check sum da dati e infine da in input la checksum e dati al crc ottiene un output e controlla se è uguale alla checksum ricevuta
+
+e normalmente E' COSI 
+
+NORMALEMNTE
+
+quando sulla rete c'è un errore e quindi uno 0 passa a 1 grazie all'effetto valanga cambia moltissimo quando cambia poco QUINDI capisco che c'è un errore per il quale chiedo di rimandre il segnale 
+
+
+
+il campo type fied ha vari valori dei quali dobbiamo sapere:
+
+Ipv4 = 0800
+
+ARP= 0806
+
+
+
+quindi ethernet che si chiama IEEE 802.3
+
+e ha dei sottostandard come 802.3i
+
+questi standard sono anche recenti e la cosa rpjcnipale che cambia è la velocità
+
+e poi  se c'è scritto laser èper la fibra ttica
+
+
+
+quindi esistono diversi standard in base alla velocità (larghezza di banda)
+
+poi si calcola con le potenze di 2 quindi un Kilo byte non sono mille ma 1024
+
+
+
+i wifi 
+
+
+
+
+
