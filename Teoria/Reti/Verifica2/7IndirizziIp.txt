@@ -1,0 +1,126 @@
+Gli indirizzi IP
+
+
+sono divisi in classi ABC e hanno delle maschere che assumono un valore in CIDR
+
+ci sono delle ipv4 speciali e quindi sono unici e hanno un significato speciale:
+
+0.0.0.0
+
+	significa this host
+
+	Quindi vuol dire questo ip del computer
+
+
+127.x.x.x 
+	
+	si potrebbero usare tantissimi indirizzi ip ma si usa sempre questo
+
+
+	127.0.0.1 e si chiama local host o home 
+
+	è l'indirizzo che corrisponde alla scheda di rete di loopback 
+
+	quindi una scheda di rete virtuale dentro il pc 
+
+	che viene usata per far comunicare due processi
+
+	quindi 
+
+
+255.255.255.255
+
+	vuol dire tutti i nodi e collega a tutti gli indirizzi nella rete 
+
+	non rete
+
+
+
+su python c'è una libreria 
+
+
+Moltiplicazione di infirizzi
+
+	si usa la tecnologia nat
+
+	ovvero uno standard 
+
+		RFC 3002 (request of comments)
+
+	visto che io posso usare tutti gli indirizzi privagti che voglio creerò
+
+	pochi indirizzi pubblici e tanti dinirizzi privati
+
+	Il nat dinamico
+
+		stabilisce mappatura tra indirizzo ip privato e uno pubblico
+
+		quindi a un ip privato assegno un indirizzo ip pubblico
+
+		e quindi se tutti devono andare in rete allo stesso moento tutti non posso andare
+
+		quindi è limitato
+
+	overloading nat
+
+		quello che usiamo di più
+
+		e introduce un concetto nuovo ovvero quello di porta
+
+		la porta si trova a livello trasporto
+
+		quindi se io sul mio pc ho vari progrmmi che usano internet ogni processo avrà una propria porta
+
+		se nel overloading si prende il concetto di porta si estrapola la significato originario
+
+		e uso la porta per ip pubblico + il numero della porta
+
+		quindi il nat mappa tutto sullo stesso indirizzo + il numero di porta
+
+		quindi io posso usare un 2 ala 16 porte con un indirizzo
+
+		e poi i collegamenti si distaccano grazie al numero di porta
+
+		quindi il mio computer che è collegato al internet 
+
+		esce con lo stesso idnirizzo degli altri ma il router sa distinguerci
+
+		e l'intrnet mnon sa la porta
+
+		
+
+		quindi come si fa a sapere che porta mi attribuisce il router
+
+		si può scoprire collgandosi al router
+
+		e lì posso vedere quale è la porta
+
+		
+	
+		Il nat overloading è considerato un abominio a livello informatico
+
+		perché per funzionare tira in ballo un concetto del livello trasporto che è sopra e usa il concetto di porta in modo imporprio
+
+
+
+		si può fare il port forwarding 
+
+		io scelgo il mio ip
+
+		e si dice al router che tutti i messaggi che arrivano a quel ip li manda al server
+
+		il problema di questa cosa 
+
+		è che io non ho il controllo sul mio ip quindi i provider fannno quasi sempre un ip dinaico
+
+		quindi io per avre il controllo sul publico devo usare o il dns oppiure pago un abbonamento per quell'ip
+
+		e quindi posso anche fare un filtro sul mac addres
+
+		quindi dico che solo quei mac possono accederci
+
+		
+
+		
+
+	

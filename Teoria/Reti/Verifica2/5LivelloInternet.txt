@@ -247,6 +247,96 @@ time to live (è n contatore che viene decrementato) (parte da 64 o 128)
 (se questo valore arriva a 0 il datagramma si cancella dalla rete) (nome improprio in ipv6 si chiama hop limit)
 
 
+protocol (che tipo di protocollo e' contenuto nei dati per il livello trasporto)
+(vale 1: quando è ICMP(quello del ping))
+
+(vale 2: IGMP) (non studiare)
+
+(vale 6 TCP (quello usato da whatsapp))
+
+(Vale 17 UDP (quello che usiamo per guardare video in streaming))
+
+(vale 89: OSPF)(non studiare)
 
 
+Checksum 
+(era nel trailer, invece qui è nel header, quindi ci permette di fare error detection)
+(cambia a ogni router ma visto che la check si calcola con un algoritmo i router calcola moltissima checksum)
+
+
+
+Frammentazione dei datagrammi IP
+
+l'algoritmo di frammentazione serve per spezzare i datagrammi 
+
+i campi sono
+
+identification 16 bit poi bit liberi poi DF don't fragmente
+e MF more fragment più frammenti e poi fragment offset 13 bit
+
+si può tradurre come spiazzamento
+
+
+se io ho 4000 byte io li spezzo in tre frammenti
+
+tutti i frammenti hanno un campo identification
+per dire a chi appartngono
+
+poi tutti i frammenti tranne lultimo 
+che hanno MF ha 1 per dire che ce ne sono ancora se no vale 0
+
+OffSet risiede la prima posizione del frammento / 8 per sapere dove inizia
+
+
+
+Campo options 
+
+serve per permettere versioni future del protocollo
+e questa cosa è decsduta grazie all'ipv6
+
+
+
+
+Il numero massimo di ipv4 che possiamo fare è un 2 alla 32 
+
+che sono pochi
+
+Ci sono di diverse classi
+
+partiamo dal fondo E e D 
+
+D = multicaster ha i primi 4 ip bloccati (1110) ed è riservato per indirizzare un gruppo di host
+
+la E = sono i riservati per usi futuri  hanno i rimi 4 bir bloccati (1111) e sono stati usati per sperimentazioni
+
+
+quelli che si usao sono a b o c 
+
+per farli in maniera univoca serve un bit bloccato e hanno un numero di bit per la rete e uno per gli host
+
+a = un bit (0) bloccato poi 7 bit per il network e 24 per l'host
+
+b = ha un (10) poi 14 di rete e 16 di host 
+
+c = 110 come inizio per la parte di rete ne usiamo 21 e per l'host solo 8
+
+
+Indirizzi privati
+
+tra tutti gli indrizzi lìci sono alcuni ip che son privati e quindi usabili solo in lan private
+
+e sono 
+
+il primi: 10.0.0.0 /8
+quindi posso fare tantissimo host ovvero 16 milioni
+
+
+poi abbiamo 172.16.0.0 /12
+che permette di fare 2 milioni 
+
+infine abbiamo 
+
+192.168.0.0 con 65 mila dispositivi /16
+
+noi usiamo un suo sottoinsieme che è il /24
 

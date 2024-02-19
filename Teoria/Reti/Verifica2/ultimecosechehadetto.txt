@@ -1,0 +1,27 @@
+Il livello internet
+
+il livello della interfaccia di rete e di host to network è quello che permette la comunicazione in rete
+
+
+invece il livello host to network è il livello a cui operano le schede di rete e gli switch
+
+e avendo solo dispositivi di livello host to network
+
+quindi il livello internet permette lo scambio di datagrammi in una rete di una grandezza a piacere
+
+quindi quello che permette di andare da a a b 
+
+
+
+la commutazione di pacchetto 
+
+è l'evoluzione della commutazione di circuito 
+
+ovvero quella dei collegamrnti via cavo
+
+con internet questa cosa è stata abbandonata 
+
+e succede che i dati che partono da dispositivo a un altro in base a come decidono i router
+
+e quindie nella commutazione di pacchetto non poniamo la concentrazione di circuito ma al pacchetto perché noi sappiamo che il pacchetto arriva ma non sappiamo che giro fa
+

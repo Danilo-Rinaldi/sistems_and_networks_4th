@@ -1,0 +1,437 @@
+IPV4 E IPV6
+
+    adesso prevale l'IPV4 ma stiamo diventando piano IPV6
+
+    visto che non si può fare un aggiornamento simultaneo, si sono studiati soluzioni per aggiornala piano piano
+
+    Internet attualmente è un mare Ipv4 con delle isole Ipv6 
+
+        bisogna gestire la transizione
+
+        e dobbiamo permettere di 
+        
+            comunicare Ipv4 e Ipv6
+
+            comunicare Ipv6 di isole diverse
+
+        soluzioni
+
+            dual stack
+
+                1a tecnologia
+
+                tutti host adottano
+
+                    perché è integrato nel sistema operativo che sa usare entrambi
+
+
+            tunneling
+
+                2a tecnologia
+
+                fa parlare due ipv6 in un mare Ipv4
+
+                funzionamento
+
+                    i router a confine del ipv6 che ha il dual stack
+
+                    e lui inserisce l'ipv6 come carico o payload di un Ipv4
+
+                    poi al prossimo di confine lo nota e gli toglie l'header 
+
+                // questa cosa si usa anche nell'hacking mascherando un protocollo probito in un protocollo innocente
+
+
+            header translation
+
+                se un computer ipv6 che comunica con un Ipv4
+
+                funzionamento 
+
+                    router di confine traduce il datagramma nell'header ipv4 o ipv6
+
+        per abbreviare si usano diverse annotazioni
+
+            se ho una serie di 0 metto :: (128 zeri) oppure ::1(127 0 e 1 1) 
+
+            (mi sono perso l'altra regola)
+
+        Indirizzamento Ipv6
+
+            ho il pirmo gruppo che indicia l'area gegografica
+
+            (secondo non lo ho segnato)
+
+        Indirizzi unicast
+
+            indirizzo unico per un host
+
+            In IPv6 non servono più indirizzi privati
+
+                quindi non serve più il nat 
+
+                e tutti i problemi correlati
+
+                perché io ho così tanti indirizzi che potrei dare un ip oubblico a tutti
+
+            tutti questi ip iniziano 
+            
+                3 bit prefissati 
+
+                    010
+
+                    indicare che è unicast
+
+                5 bit per indicare l'agenzia 
+
+                    ogni agenzia gestisce il territorio continentale
+
+                16 bit per indicare il provider
+
+                    perché sono molti
+
+                24 bit univoco per l'utente 
+
+                    quindi la privacy inizia a scomparire
+
+                32 bit che uso per fare sottoreti
+
+                    nel caso in cui io ne voglia 
+
+                    4 miliardi di sottoreti
+
+                48 bit le uso per identificare i nodi
+
+                    fino a 2 alla 48 nodi 
+
+                IO HO COSI TANTI IP CHE PER USARLI TUTTI DOVREI METTERE 25 MILA COMPUTER AL METRO QUADRO PER TUTTA LA TERRA
+
+                quindi io con questo ip posso risalire ALLA PERSONA il che non è molto bello per gli hacker perché non sono comperti da un ip pubblico condiviso
+
+        indirizzi speciali
+
+            indirizzo di loopback 
+
+                ipv4 127.0.0.1
+
+                ipv6 ::1 (127 * "0" + "1")
+
+            unspecified addres or this host
+
+                ipv4 0.0.0.0
+
+                ipv6 :: (128 * "0")
+
+            indirizzo multicast
+
+                ipv4: 224.0.0.0
+
+                ipv6: FF00::
+
+        Comunicazione tra pc
+
+            per far comunicare due computer serve l'ip altrui
+
+            quindi noi possiamo dare al programma in python l'indirizzo non specificato 
+
+            in moodo ta che python capisce subito che quello deve essere sostituito con quello reale della macchina
+
+        Indirizzi riservati:
+
+            unspecified
+
+                quando u nodo non conosce il proprio indirizzo
+
+                8 bit 0 e altri 0
+
+            loopback
+                
+                i pacchetti percorrono lo stack ma non nella rete ma vanno nel loopback
+
+                8 bit 0 altri 0 e ultimo 1
+
+            compatible
+
+                usare nel tunneling
+
+                8 bit 0 altri 0 e il suo ip addres
+
+            mapped 
+
+                header translation
+
+                8 0 altri 0 16 bit 1 32 bit di ipv4
+
+        se il mondo fosse tutto ipv6 allora queste cose scompariranno
+
+
+        Pila TCP-IP
+
+            applicazione
+
+                http
+
+                https
+
+                ftp
+
+                smtp
+
+                ...
+
+            trasporto
+
+                tcp
+
+                udp
+
+            Internet
+
+                ipv4
+
+                Ipv6
+
+            host to network
+
+                IEEE802.x
+
+        DHCP e ARP
+
+            Arp
+
+                livello Internet
+
+                protocollo
+
+                address resolution protocol
+
+                RFC826
+
+                    numero piccolo perché vecchio
+
+                risolve un problema
+
+                    se voglio mandare un messaggio sia all'indirizzo ip sia il mac address
+
+                    quindi è nato lui
+
+                    che dato l'ip ti trova il mac address
+
+                solo ipv4 
+
+                    perché negli indirizzi unicast ipv6 
+
+                    gli ultimi 48 bit è inserito il mac address
+
+                Come funziona?
+
+                    risoluzione statica?
+
+                        noooooo
+
+                        perché una tabella ggiornata con tutti qusti ip che cambiano in continuazione  non è pragmatico
+
+                    risoluzione dinamica?
+
+                        si
+
+                        io conosco l'ip 
+
+                        quindi io mando un messaggio in broadcast 
+
+                        in cui chiedo chi è quello con quell'indirizzo ip 
+
+                        quello con quel indirizzo ip mi risponde con il suo indirizzo fisico
+
+                come faccio a mandare in broadcast un messaggio senza indirizzo ip
+
+                    i messaggi arp in broadcast vengono messi dentro dei frame ethernet o wifi
+
+                    e l'indirizzo fisico di chi manda e di chi riceve
+
+                    e di chi riceve ottiene l'indirizzo fisico di broad cast
+
+                    che ha tutti i bit a 1
+
+                    poi il computer giusto
+
+                    risponde con una risposta a lui 
+
+                la cache di arp
+
+                    viene ottimizzato con una cache 
+
+                    dove si salvano gli indirizzi ip che ha scoperto
+
+                    è una soft state 
+
+                        salva delle informazioni di stato
+
+                        perché le informazioni potrebbero diventare invalide senza prwvviso
+
+                migliorie apportate ad arp
+
+
+                    quando mando la richiesta in broad cast
+
+                    mando a tutti il mio ip e il mio indirizzo fisico
+
+                    e gli altri si salvano me 
+
+
+                    quando A viene acceso
+
+                    manda un messaggio a broadcast alla rete senza destinatario
+
+                    così scopre tutti indirizi 
+
+
+                    quando A viene acceso manda un messaggio nella rete in broadcast
+
+                    chi è il A indirizzo ip
+
+                    se qualcuno risponde
+
+                    PROBKEMAAAAA
+
+                Struttura messaggio ARP
+
+                    Hardware tipe
+
+                        vale 1
+
+                    opcode
+
+                        operation
+
+                        valore 1 richiesta
+
+                        valore 2 risposta
+
+                si trova all'interno di data nel frame ethernet
+
+                nel messaggio possiamo trovare di importante
+
+                    opcode
+
+                    MacAddress mitente
+
+                    Ip address del mitente
+
+                    mac address destinatario 
+
+                    ip address destinatario
+
+
+
+
+
+
+                Grafo
+
+                    una collezione di vertici collegati da archi (o link) (o edge)
+
+                    disegnamo un grafo da 5 veritici e 6 archi
+
+                        veritici v 
+
+                        archi e 
+
+                    l'applicazione alla robotica è
+
+                        quando devo navigare un robot attraverso il percorso più veloce 
+
+                        ho il mio pavimento diviso in mattonelle
+
+                        in una stanza con degli ostacoli
+
+                        e dall'altra parte del muro c'è una bandioerina
+
+                    perché uso i grafi?
+
+                        posso impostare le piastrelle libere come un vertice
+
+                        e gli edge collegano tutti i nodi vicino
+
+                    applicazione ai social
+
+                        se contiamo facebook ad esempio
+
+                            ogni utente è un nodo
+
+                            e i collegamenti è l'amicizia
+
+                            e così abbiamo il nostro grafo
+
+                        invece per instagram
+
+                            dove il follow può non essere ricambiato 
+
+                            usiamo i grafi orientati
+
+                            quindi in cui ogni edge ha una direzione
+
+                    come faccio a dare questa cosa in pasto a python?
+
+                        grafo non orientato
+
+                            vertici do un nome
+
+                            poi faccio una tabella
+
+                                in cui sopra e di lato metto il nome dei nodi
+
+                                e dentro indico i collegamenti
+
+                                    1 se è collegati
+
+                                    0 se non è collegati
+
+                                    0 se con se stesso a meno che non sia indicato on un edge
+
+                            e otteniamo una matrice di addiancenza
+
+                                che è SIMMETRICA per i grafi non orientati
+
+                            in python in particolare posso usare il DIZIONARIO DELLE ADDIACENZE
+
+                                in cui come indice ho 0 con il valore una lista dei nodi a cui è collegata
+
+                                poi 1, 2, 3, 4...
+
+                            Esercizio in python 
+
+                                scrivere un dizionario 
+
+                                    d = {0: [2, 3], 1: [2, 4], 2: [0, 1, 3], 3 : [0, 2, 4], 4 : [1, 3]}
+
+
+
+
+
+
+                    
+
+
+		
+
+
+
+
+
+                
+                    
+
+                
+
+
+
+
+
+
+        
+
+        
+
+
+

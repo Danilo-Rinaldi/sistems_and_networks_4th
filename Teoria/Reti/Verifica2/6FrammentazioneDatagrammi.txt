@@ -1,0 +1,30 @@
+5200 byt divisi in 4 frammenti minuori o uguali di 1500 byte
+
+potremmo dividerlo in 3 da 1500 e uno da 700
+
+il primo frammento sarà quello da 0 a 1499
+
+poi il frag more fragment varrà 1 e il fragment offset varrà 0 / 8 = 0
+
+il secondo frammento vale 1500  al 2999 
+
+con il MF = 1 e ilFragment offset = 1500/8 = 187
+
+il terzo frammento vale 3000 a 4499
+
+con MF = 1 FoO 3000 / 8 = 375
+
+l'ultimo va da 4500 a 5199
+
+con MF = 0!! e FO = 4500/8 = 562
+
+1 ordering 
+
+2 dati completi 
+
+DF  vuol dire don't fragment e viene usato in occorenza quando l'host vuole ipedire la frammentazione
+
+nel caso in cui però la si possa impedire di manda DF = 1
+
+si usa solo per i dati piccoli
+

@@ -1,0 +1,86 @@
+DHCP
+
+    Dynamic host configuration protocol
+
+    protocollo di configurazione dinamica di host
+
+    composto da due particolare
+
+        Server DHCP
+
+        Protocollo DHCP
+
+    metodo più usato per affidare un ip ai host di una lan
+
+    DNS 
+        
+        non ricordare gli ip dei siti 
+
+        dove vorremmo navigare
+
+    gli ip che vengono dati sono dati in leesing 
+
+        prestito
+
+        e possiamo trovare quando è stato dato e quando verrà restituito
+
+    Come funziona
+
+        Discover
+
+            appena entra in rete un pc manda un messaggio in brcst chiedendo
+
+            c'è qualche DHCP
+
+            se ce ne è qualcuno
+
+            essi gli rispondono con il loro ip
+
+            Interssante
+
+                visto che per mandare un messaggio devo avere un ip
+
+                e io chiedo se mi possono dare un ip
+
+                a quel punto io lo mando con 0.0.0.0 a 255.255.255.255
+
+        Scenari
+
+            1. No Server 
+
+                nessuno risponde
+
+                il mesaggio cade nel nulla
+
+                e i computer vanno configuration
+
+            2. ce ne è uno o più
+
+                arriva il messaggio 
+
+                e ritorna un messaggio chiamato offer
+
+                    mesaggio in unicast
+
+                può darsi che io ottenga più offerte
+
+                    quindi tramite un DHCP request in brcst
+
+                    scelgo una sola autenticazione 
+
+        ACK 
+
+            in cui il server prescelto 
+
+            ovvero 
+
+            un messaggio in broadcast
+
+            in cui conferma che la configurazione è sua
+
+        Queste configurazioni hanno una lease
+
+            ovvero una configurazione limitata
+
+            in cui si cambiano gli ip
+

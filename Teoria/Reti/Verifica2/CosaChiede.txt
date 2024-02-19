@@ -1,0 +1,37 @@
+Cosa chiede
+
+
+- IEEE 802.X
+
+	x = 3 e 11 importanti
+
+	csma/cd, csma/ca, ecc
+
+	studiare a mem quelli importanti
+
+Commutazione di pacchetto
+
+
+	
+10 principi
+	
+
+Header Ipv4
+
+Ipv4
+
+	quanti se ne possono fare
+
+	ecc
+
+	calcolo sottoreti
+
+		ma studiali perché li chiede dopo
+
+
+NAT
+
+	abominio (possibile domanda)
+
+
+
